@@ -13,6 +13,7 @@
     "bootstrap": "^3.3.7",
     "express": "^4.16.2",
     "fabric-ca-client": "^1.1.0-preview",
+    "fabric-client": "^1.1.0-preview",
     "grpc": "^1.8.0"
   }
 }
