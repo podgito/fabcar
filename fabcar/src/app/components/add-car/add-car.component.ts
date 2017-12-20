@@ -12,4 +12,7 @@ export class AddCarComponent implements OnInit {
   ngOnInit() {
   }
 
+  addCar() {
+    
+  }
 }
