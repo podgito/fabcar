@@ -17,12 +17,13 @@ app.use(function (req, res, next) {
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/padraic', (req, res) => res.send('Hello Padraic!'))
 
+var channel = fabric_client.newChannel('mychannel');
+var peer = fabric_client.newPeer('grpc://localhost:7051');
+channel.addPeer(peer);
 
 app.get('/cars', (req, res) => {
     // setup the fabric network
-    var channel = fabric_client.newChannel('mychannel');
-    var peer = fabric_client.newPeer('grpc://localhost:7051');
-    channel.addPeer(peer);
+    
 
     var member_user = null;
     var store_path = path.join(__dirname, 'hfc-key-store');
