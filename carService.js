@@ -25,7 +25,7 @@ app.get('/cars', (req, res) => {
     channel.addPeer(peer);
 
     var member_user = null;
-    var store_path = '/home/blockchain/projects/fabric-samples/hfc-key-store'// path.join('home/blockchain/projects/fabric-samples/hfc-key-store');
+    var store_path = '/home/blockchain/projects/fabric-samples/fabcar/hfc-key-store'// path.join('home/blockchain/projects/fabric-samples/hfc-key-store');
     console.log('Store path:' + store_path);
     var tx_id = null;
 
