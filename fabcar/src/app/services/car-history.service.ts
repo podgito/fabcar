@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Car } from '../models/car'
 import { Observable } from 'rxjs'
 import 'rxjs/add/operator/map'
+import { CarHistory } from '../models/car-history';
 
 @Injectable()
-export class CarService {
+export class CarHistoryService {
 
   constructor(private http: HttpClient) { }
-  getCars() : Observable<Car[]> {
-    return this.http.get<Car[]>('http://localhost:3000/cars')          
+  getCarHistory(key: string) : Observable<CarHistory[]> {
+    return this.http.get<CarHistory[]>('http://localhost:3000/carHistory/CAR0')          
   }
 }

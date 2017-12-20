@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../../services/car.service'
 import { Car } from '../../models/car'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-cars',
@@ -10,7 +11,7 @@ import { Car } from '../../models/car'
 export class CarsComponent implements OnInit {
   public cars: Car[];
 
-  constructor(private carService: CarService) { }
+  constructor(private carService: CarService, private router: Router) { }
 
   ngOnInit() {
     this.carService.getCars().subscribe(
@@ -18,4 +19,7 @@ export class CarsComponent implements OnInit {
     );
   }
 
+  carDetails(key:string) {
+    this.router.navigate(['car/'+key]);
+  }
 }

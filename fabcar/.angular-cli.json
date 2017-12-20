@@ -10,7 +10,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "mock-cars.json"
+        "mock-cars.json",
+        "mock-car-history.json"
       ],
       "index": "index.html",
       "main": "main.ts",

@@ -10,19 +10,37 @@ import { CarService } from './services/car.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule, Routes} from '@angular/router';
+import { CarHistoryComponent } from './components/car-history/car-history.component';
+import { CarHistoryService } from './services/car-history.service';
+import { AddCarComponent } from './components/add-car/add-car.component';
+
+const appRoutes: Routes = [
+  {path: '', component: CarsComponent},
+  {path: 'car/:key', component: CarHistoryComponent},
+  {path: 'addCar', component: AddCarComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     CartableComponent,
-    CarsComponent
+    CarsComponent,
+    CarHistoryComponent,
+    AddCarComponent
   ],
   imports: [
     BrowserModule, 
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes,
+      {enableTracing: true}
+    )
   ],
-  providers: [CarService],
+  providers: [CarService, CarHistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

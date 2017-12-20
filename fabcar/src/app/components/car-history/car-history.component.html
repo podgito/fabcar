@@ -1,0 +1,38 @@
+<h1>History of {{carKey}}</h1>
+<table class="table table-striped table-bordered table-clickable">
+  <thead>
+    <tr>
+      <th>
+        Make
+      </th>
+      <th>
+        Model
+      </th>
+      <th>
+        Colour
+      </th>
+      <th>
+        Owner
+      </th>
+      <th>
+        Timestamp
+      </th>
+      <th>
+        IsDeleted
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let state of carHistory">
+      <td>{{state.Value.make}}</td>
+      <td>{{state.Value.model}}</td>
+      <td>{{state.Value.colour}}</td>
+      <td>{{state.Value.owner}}</td>    
+      <td>{{state.Timestamp}}</td>
+      <td>{{state.IsDelete}}</td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-lg btn-success">
+  Change Owner
+</button>
