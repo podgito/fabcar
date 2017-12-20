@@ -42,21 +42,21 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
     fabric_ca_client = new Fabric_CA_Client('http://localhost:7054', tlsOptions , 'ca.example.com', crypto_suite);
 
     // first check to see if the admin is already enrolled
-    return fabric_client.getUserContext('fabcarAdmin', true);
+    return fabric_client.getUserContext('admin', true);
 }).then((user_from_store) => {
     if (user_from_store && user_from_store.isEnrolled()) {
-        console.log('Successfully loaded fabcarAdmin from persistence');
+        console.log('Successfully loaded admin from persistence');
         admin_user = user_from_store;
         return null;
     } else {
         // need to enroll it with CA server
         return fabric_ca_client.enroll({
-          enrollmentID: 'fabcarAdmin',
+          enrollmentID: 'admin',
           enrollmentSecret: 'adminpw'
         }).then((enrollment) => {
-          console.log('Successfully enrolled admin user "fabcarAdmin"');
+          console.log('Successfully enrolled admin user "admin"');
           return fabric_client.createUser(
-              {username: 'fabcarAdmin',
+              {username: 'admin',
                   mspid: 'Org1MSP',
                   cryptoContent: { privateKeyPEM: enrollment.key.toBytes(), signedCertPEM: enrollment.certificate }
               });
