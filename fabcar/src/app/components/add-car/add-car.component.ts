@@ -12,7 +12,6 @@ export class AddCarComponent implements OnInit {
   constructor(private addCarService: AddCarService) { }
 
   ngOnInit() {
-
   }
 
   addCar(form: NgForm) {
