@@ -30,7 +30,6 @@ export class AddCarComponent implements OnInit {
 
     newCar.Record = newCarDetails;
 
-    console.log(newCar);
-    //this.addCarService.addCar().subscribe(res => console.log(res));
+    this.addCarService.addCar(newCar).subscribe(res => console.log(res));
   }
 }

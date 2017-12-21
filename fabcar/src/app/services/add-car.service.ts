@@ -12,12 +12,12 @@ export class AddCarService {
   constructor(private http: HttpClient) { }
 
 
-  addCar() : Observable<Object> {
-    console.log("AddCarService");
+  addCar(newCar: Car) : Observable<Object> {
+    console.log(newCar);
     return this.http.post('http://localhost:3000/addCar/', {
       title: 'foo',
       body: 'bar',
-      userId: 1
+      car: newCar
     });
   }
 }

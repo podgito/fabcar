@@ -40,7 +40,9 @@ app.get('/carHistory/:key', (req, res) => {
 
 app.post('/addCar', (req, res) => {
     console.log("Add Car");
-    invokeFabric('createCar', ['CAR10', 'Lamborghini', 'Gallardo', 'yellow', 'Faz']);
+    console.log(req);
+    
+    //invokeFabric('createCar', ['CAR10', 'Lamborghini', 'Gallardo', 'yellow', 'Faz']);
 })
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
