@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AddCarService } from '../../services/add-car.service';
 import { Car } from '../../models/car'
+import { CarDetails } from '../../models/car-details';
 
 @Component({
   selector: 'app-add-car',
@@ -16,16 +17,18 @@ export class AddCarComponent implements OnInit {
   }
 
   addCar(form: NgForm) {
-    console.log(form);
-    console.log(JSON.stringify(form.value))
     var newCar = new Car();
-    console.log(form.value.key);
+    var newCarDetails = new CarDetails();
+    
     
     newCar.Key = form.value.key;
-    newCar.Record.make = form.value.make;
-    newCar.Record.model = form.value.model;
-    newCar.Record.colour = form.value.colour;
-    newCar.Record.owner = form.value.owner;
+
+    newCarDetails.make = form.value.make;
+    newCarDetails.model = form.value.model;
+    newCarDetails.colour = form.value.colour;
+    newCarDetails.owner = form.value.owner;
+
+    newCar.Record = newCarDetails;
 
     console.log(newCar);
     //this.addCarService.addCar().subscribe(res => console.log(res));
