@@ -13,7 +13,7 @@ export class AddCarService {
 
 
   addCar(newCar: Car) : Observable<Object> {
-    const requestOptions = {
+    var requestOptions = {
       params: new HttpParams()
     };
     
@@ -24,6 +24,6 @@ export class AddCarService {
       title: 'foo',
       body: 'bar',
       car: newCar
-    });
+    }, requestOptions);
   }
 }
