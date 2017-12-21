@@ -10,6 +10,9 @@ var peer = fabric_client.newPeer('grpc://localhost:7051');
 channel.addPeer(peer);
 var order = fabric_client.newOrderer('grpc://localhost:7050')
 channel.addOrderer(order);
+var store_path = '/home/blockchain/projects/fabric-samples/fabcar/hfc-key-store';// path.join('home/blockchain/projects/fabric-samples/hfc-key-store');
+    
+
 
 const app = express();
 
@@ -45,7 +48,6 @@ app.listen(3000, () => console.log('Example app listening on port 3000!'))
 function queryFabric(fcn, args, res) {
 
     var member_user = null;
-    var store_path = '/home/blockchain/projects/fabric-samples/fabcar/hfc-key-store';// path.join('home/blockchain/projects/fabric-samples/hfc-key-store');
     console.log('Store path:' + store_path);
     var tx_id = null;
 
