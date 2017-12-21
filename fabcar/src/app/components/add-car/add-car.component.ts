@@ -13,7 +13,7 @@ export class AddCarComponent implements OnInit {
 
   ngOnInit() {
     console.log("InitBegin");
-    this.addCarService.getCars();
+    console.log(this.addCarService.getCars());
     console.log("InitEnd");    
   }
 
