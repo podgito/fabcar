@@ -19,6 +19,8 @@ export class AddCarComponent implements OnInit {
     console.log(form);
     console.log(JSON.stringify(form.value))
     var newCar = new Car();
+    console.log(form.value.key);
+    
     newCar.Key = form.value.key;
     newCar.Record.make = form.value.make;
     newCar.Record.model = form.value.model;
