@@ -12,14 +12,11 @@ export class AddCarComponent implements OnInit {
   constructor(private addCarService: AddCarService) { }
 
   ngOnInit() {
-    console.log("InitBegin");
-    console.log(this.addCarService.getCars().subscribe());
-    console.log("InitEnd");    
+
   }
 
   addCar(form: NgForm) {
     console.log("ADD");
-    this.addCarService.getCars();
-    this.addCarService.addCar();
+    this.addCarService.addCar().subscribe(res => console.log(res));
   }
 }
