@@ -23,6 +23,6 @@ export class AddCarService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
     console.log(newCar);
-    return this.http.post('http://localhost:3000/addCar/', newCar, {headers : headers});
+    return this.http.post('http://localhost:3000/addCar/', {'foo':'bar'}, {headers : headers});
   }
 }
