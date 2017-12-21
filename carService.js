@@ -1,5 +1,5 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
 
 var Fabric_Client = require('fabric-client');
 var path = require('path');
@@ -47,7 +47,6 @@ app.post('/addCar', (req, res) => {
     console.log("Add Car");
     console.log(req);
     console.log(req.body);
-    console.log(req.body.Key);
     
     //invokeFabric('createCar', ['CAR10', 'Lamborghini', 'Gallardo', 'yellow', 'Faz']);
 })
