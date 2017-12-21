@@ -1,4 +1,6 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+
 var Fabric_Client = require('fabric-client');
 var path = require('path');
 var util = require('util');
@@ -15,6 +17,8 @@ var store_path = '/home/blockchain/projects/fabric-samples/fabcar/hfc-key-store'
 
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 
 app.use(function (req, res, next) {
@@ -40,7 +44,7 @@ app.get('/carHistory/:key', (req, res) => {
 
 app.post('/addCar', (req, res) => {
     console.log("Add Car");
-    console.log(req);
+    console.log(req.car);
     
     //invokeFabric('createCar', ['CAR10', 'Lamborghini', 'Gallardo', 'yellow', 'Faz']);
 })
