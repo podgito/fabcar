@@ -16,6 +16,7 @@ export class AddCarComponent implements OnInit {
   }
 
   addCar(form: NgForm) {
+    console.log(form);
     var newCar = new Car();
     newCar.Key = form.value.key;
     newCar.Record.make = form.value.make;
