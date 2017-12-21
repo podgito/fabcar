@@ -6,6 +6,9 @@ var os = require('os');
 
 var fabric_client = new Fabric_Client();
 var channel = fabric_client.newChannel('mychannel');
+var peer = fabric_client.newPeer('grpc://localhost:7051');
+channel.addPeer(peer);
+
 
 const app = express();
 
@@ -33,8 +36,6 @@ app.get('/carHistory/:key', (req, res) => {
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 function queryFabric(fcn, args, res){
-    var peer = fabric_client.newPeer('grpc://localhost:7051');
-    channel.addPeer(peer);
 
     var member_user = null;
     var store_path = '/home/blockchain/projects/fabric-samples/fabcar/hfc-key-store'// path.join('home/blockchain/projects/fabric-samples/hfc-key-store');
