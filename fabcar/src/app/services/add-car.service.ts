@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+// import {Headers, RequestOptions} from '@angular/http';
+
 
 
 import { Car } from '../models/car'
@@ -13,17 +15,14 @@ export class AddCarService {
 
 
   addCar(newCar: Car) : Observable<Object> {
-    var requestOptions = {
-      params: new HttpParams()
-    };
-    
-    requestOptions.params.set('Content-Type', 'application/json');
+    let body = JSON.stringify(newCar);
+    // var contentHeaders = new Headers();
+    // contentHeaders.append('Accept', 'application/json');
+    // contentHeaders.append('Content-Type', 'application/json');
+    // let options = new RequestOptions({headers: contentHeaders});
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 
     console.log(newCar);
-    return this.http.post('http://localhost:3000/addCar/', {
-      title: 'foo',
-      body: 'bar',
-      car: newCar
-    }, requestOptions);
+    return this.http.post('http://localhost:3000/addCar/', body, {headers : headers});
   }
 }
