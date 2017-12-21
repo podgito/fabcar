@@ -10,6 +10,6 @@ export class CarHistoryService {
 
   constructor(private http: HttpClient) { }
   getCarHistory(key: string) : Observable<CarHistory[]> {
-    return this.http.get<CarHistory[]>('http://localhost:3000/carHistory/CAR0')          
+    return this.http.get<CarHistory[]>('http://localhost:3000/carHistory/'+key)          
   }
 }
