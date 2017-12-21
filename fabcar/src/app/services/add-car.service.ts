@@ -9,6 +9,7 @@ export class AddCarService {
 
   addCar() {
     console.log("AddCarService");
+    this.http.get('http://localhost:3000/');
     this.http.post('http://localhost:3000/addCar/', {
       title: 'foo',
       body: 'bar',
