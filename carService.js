@@ -5,8 +5,10 @@ var util = require('util');
 var os = require('os');
 
 var fabric_client = new Fabric_Client();
+var channel = fabric_client.newChannel('mychannel');
 
-const app = express()
+const app = express();
+
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -31,7 +33,6 @@ app.get('/carHistory/:key', (req, res) => {
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 function queryFabric(fcn, args, res){
-    var channel = fabric_client.newChannel('mychannel');
     var peer = fabric_client.newPeer('grpc://localhost:7051');
     channel.addPeer(peer);
 
