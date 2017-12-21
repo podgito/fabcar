@@ -45,6 +45,7 @@ app.get('/carHistory/:key', (req, res) => {
 
 app.post('/addCar', (req, res) => {
     console.log("Add Car");
+    console.log(req);
     console.log(req.body);
     
     //invokeFabric('createCar', ['CAR10', 'Lamborghini', 'Gallardo', 'yellow', 'Faz']);
