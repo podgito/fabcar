@@ -12,6 +12,8 @@ export class AddCarComponent implements OnInit {
   constructor(private addCarService: AddCarService) { }
 
   ngOnInit() {
+    this.addCarService.getCars();
+    this.addCarService.addCar();
   }
 
   addCar(form: NgForm) {
