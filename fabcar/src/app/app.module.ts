@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing: true}
+      {enableTracing: false}
     )
   ],
   providers: [CarService, CarHistoryService, AddCarService],
