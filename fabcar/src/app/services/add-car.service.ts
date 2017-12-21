@@ -7,7 +7,7 @@ export class AddCarService {
   constructor(private http: HttpClient) { }
 
 
-  getCarHistory() {
+  addCar() {
     return this.http.post('http://localhost:3000/addCar/', '')          
   }
 }
