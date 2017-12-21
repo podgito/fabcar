@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams} from '@angular/common/http';
 
 
 import { Car } from '../models/car'
@@ -13,6 +13,12 @@ export class AddCarService {
 
 
   addCar(newCar: Car) : Observable<Object> {
+    const requestOptions = {
+      params: new HttpParams()
+    };
+    
+    requestOptions.params.set('Content-Type', 'application/json');
+
     console.log(newCar);
     return this.http.post('http://localhost:3000/addCar/', {
       title: 'foo',
