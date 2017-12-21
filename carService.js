@@ -47,6 +47,7 @@ app.post('/addCar', (req, res) => {
     console.log("Add Car");
     console.log(req);
     console.log(req.body);
+    console.log(req.body.Key);
     
     //invokeFabric('createCar', ['CAR10', 'Lamborghini', 'Gallardo', 'yellow', 'Faz']);
 })
