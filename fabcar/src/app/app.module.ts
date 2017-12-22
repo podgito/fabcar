@@ -23,8 +23,8 @@ import { AddOwnerComponent } from './components/add-owner/add-owner.component';
 const appRoutes: Routes = [
   {path: '', component: CarsComponent},
   {path: 'car/:key', component: CarHistoryComponent},
-  {path: 'addCar', component: AddCarComponent},  
-  {path: 'addOwner', component: AddCarComponent}
+  {path: 'addCar', component: AddCarComponent},
+  {path: 'addOwner', component: AddOwnerComponent}
 ]
 
 @NgModule({
