@@ -16,14 +16,9 @@ export class AddCarService {
 
   addCar(newCar: Car) : Observable<Object> {
     let body = JSON.stringify(newCar);
-    let test = JSON.stringify({"foo":"bar"});
-    // var contentHeaders = new Headers();
-    // contentHeaders.append('Accept', 'application/json');
-    // contentHeaders.append('Content-Type', 'application/json');
-    // let options = new RequestOptions({headers: contentHeaders});
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     console.log(newCar);
-    return this.http.post('http://localhost:3000/addCar/', test, {headers : headers});
+    return this.http.post('http://localhost:3000/addCar/', body, {headers : headers});
   }
 }
