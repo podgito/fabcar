@@ -17,6 +17,8 @@ import { CarHistoryComponent } from './components/car-history/car-history.compon
 import { CarHistoryService } from './services/car-history.service';
 import { AddCarComponent } from './components/add-car/add-car.component';
 import { AddCarService } from './services/add-car.service';
+import { AddOwnerService } from './services/add-owner.service';
+import { AddOwnerComponent } from './components/add-owner/add-owner.component';
 
 const appRoutes: Routes = [
   {path: '', component: CarsComponent},
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     CartableComponent,
     CarsComponent,
     CarHistoryComponent,
-    AddCarComponent
+    AddCarComponent,
+    AddOwnerComponent
   ],
   imports: [
     BrowserModule, 

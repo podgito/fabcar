@@ -49,6 +49,13 @@ app.post('/addCar', (req, res) => {
     invokeFabric('createCar', [req.body.Key, req.body.Record.make, req.body.Record.model, req.body.Record.colour, req.body.Record.owner]);
 })
 
+
+app.post('/addOwner', (req, res) => {
+    //validate stuff here
+    
+    invokeFabric('createCar', [req.body.Key, req.body.owner]);
+})
+
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 function queryFabric(fcn, args, res) {
