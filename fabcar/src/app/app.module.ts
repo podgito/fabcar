@@ -24,7 +24,7 @@ const appRoutes: Routes = [
   {path: '', component: CarsComponent},
   {path: 'car/:key', component: CarHistoryComponent},
   {path: 'addCar', component: AddCarComponent},
-  {path: 'addOwner', component: AddOwnerComponent}
+  {path: 'addOwner/:key', component: AddOwnerComponent}
 ]
 
 @NgModule({
