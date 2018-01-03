@@ -1,3 +1,8 @@
-<p>
-  add-owner works!
-</p>
+<form #signupForm="ngForm" name="signupForm" id="signupForm" (ngSubmit)="addOwner(signupForm)">
+  <div class="form-group row">
+    <label for="key" class="col-sm-2 col-form-label">Key</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="key" name="key" placeholder="Key" ngModel>
+    </div>
+  </div>
+</form>
