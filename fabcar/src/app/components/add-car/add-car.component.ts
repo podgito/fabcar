@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AddCarService } from '../../services/add-car.service';
 import { Car } from '../../models/car'
 import { CarDetails } from '../../models/car-details';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-car',
@@ -11,7 +12,7 @@ import { CarDetails } from '../../models/car-details';
 })
 export class AddCarComponent implements OnInit {
 
-  constructor(private addCarService: AddCarService) { }
+  constructor(private addCarService: AddCarService, private router : Router) { }
 
   ngOnInit() {
   }
@@ -30,6 +31,6 @@ export class AddCarComponent implements OnInit {
 
     newCar.record = newCarDetails;
 
-    this.addCarService.addCar(newCar).subscribe(res => console.log(res));
+    this.addCarService.addCar(newCar).subscribe(res => {console.log(res); this.router.navigate(['']);});
   }
 }
