@@ -1,6 +1,6 @@
 import { CarDetails } from './car-details'
 
 export class Car {
-    Key: string;
-    Record: CarDetails;
+    key: string;
+    record: CarDetails;
 }
