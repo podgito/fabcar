@@ -46,14 +46,14 @@ app.get('/carHistory/:key', (req, res) => {
 app.post('/addCar', (req, res) => {
     //validate stuff here
     
-    invokeFabric('createCar', [req.body.Key, req.body.Record.make, req.body.Record.model, req.body.Record.colour, req.body.Record.owner]);
+    invokeFabric('createCar', [req.body.key, req.body.record.make, req.body.record.model, req.body.record.colour, req.body.record.owner]);
 })
 
 
 app.post('/addOwner', (req, res) => {
     //validate stuff here
     
-    invokeFabric('changeCarOwner', [req.body.Key, req.body.owner]);
+    invokeFabric('changeCarOwner', [req.body.key, req.body.owner]);
 })
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))

@@ -11,7 +11,7 @@ export class AddOwnerService {
 
 
   addOwner(carKey: string, owner: string) : Observable<Object> {
-    var params = {"Key": carKey, "Owner": owner};
+    var params = {"key": carKey, "owner": owner};
     let body = JSON.stringify(params);
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
