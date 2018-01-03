@@ -46,14 +46,14 @@ app.get('/carHistory/:key', (req, res) => {
 app.post('/addCar', (req, res) => {
     //validate stuff here
     
-    invokeFabric('createCar', [req.body.key, req.body.record.make, req.body.record.model, req.body.record.colour, req.body.record.owner]);
+    invokeFabric('createCar', [req.body.key, req.body.record.make, req.body.record.model, req.body.record.colour, req.body.record.owner], res);
 })
 
 
 app.post('/addOwner', (req, res) => {
     //validate stuff here
     
-    invokeFabric('changeCarOwner', [req.body.key, req.body.owner]);
+    invokeFabric('changeCarOwner', [req.body.key, req.body.owner], res);
 })
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
@@ -116,7 +116,7 @@ function queryFabric(fcn, args, res) {
     });
 }
 
-function invokeFabric(fcn, args) {
+function invokeFabric(fcn, args, res) {
     Fabric_Client.newDefaultKeyValueStore({
         path: store_path
     }).then((state_store) => {
@@ -234,6 +234,7 @@ function invokeFabric(fcn, args) {
         console.log('Send transaction promise and event listener promise have completed');
         // check the results in the order the promises were added to the promise all list
         if (results && results[0] && results[0].status === 'SUCCESS') {
+            res.send({});
             console.log('Successfully sent transaction to the orderer.');
         } else {
             console.error('Failed to order the transaction. Error code: ' + response.status);
