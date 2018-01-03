@@ -20,6 +20,7 @@ export class AddOwnerComponent implements OnInit {
   }
 
   addOwner(form: NgForm) {
-    this.addOwnerService.addOwner(this.carKey, form.value.owner).subscribe(res => console.log(res));
+    this.addOwnerService.addOwner(this.carKey, form.value.owner).subscribe(res => { console.log(res); this.router.navigate(['']);});
+    
   }
 }
