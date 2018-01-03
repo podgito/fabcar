@@ -21,14 +21,14 @@ export class AddCarComponent implements OnInit {
     var newCarDetails = new CarDetails();
     
     
-    newCar.Key = form.value.key;
+    newCar.key = form.value.key;
 
     newCarDetails.make = form.value.make;
     newCarDetails.model = form.value.model;
     newCarDetails.colour = form.value.colour;
     newCarDetails.owner = form.value.owner;
 
-    newCar.Record = newCarDetails;
+    newCar.record = newCarDetails;
 
     this.addCarService.addCar(newCar).subscribe(res => console.log(res));
   }
