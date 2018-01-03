@@ -47,7 +47,7 @@ const appRoutes: Routes = [
       {enableTracing: false}
     )
   ],
-  providers: [CarService, CarHistoryService, AddCarService],
+  providers: [CarService, CarHistoryService, AddCarService, AddOwnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
