@@ -1,8 +1,10 @@
 <form #signupForm="ngForm" name="signupForm" id="signupForm" (ngSubmit)="addOwner(signupForm)">
   <div class="form-group row">
-    <label for="key" class="col-sm-2 col-form-label">Key</label>
+    <label for="owner" class="col-sm-2 col-form-label">Owner</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="key" name="key" placeholder="Key" ngModel>
+      <input type="text" class="form-control" id="owner" name="owner" placeholder="Owner" ngModel>
     </div>
   </div>
+</form>
+<input class="btn btn-block btn-success" type="submit" value="Submit" form="signupForm"/>
 </form>
